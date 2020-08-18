@@ -1,6 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 def home(request):
-    return HttpResponse('<h1>Blog Home</h1>')
+    posts = []
+    return render(request, 'blog/home.html', {'posts': posts})
+
+
+def about(request):
+    return render(request, 'blog/about.html')
